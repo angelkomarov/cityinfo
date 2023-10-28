@@ -1,0 +1,17 @@
+<!--indicates which page a user is currently on in the left sidebar 
+Using font awesome icons
+-->
+<nav>
+    <ul>
+      <li>
+        <a routerLink="" [class.activated]="currentUrl == '/'">
+          <fa-icon [icon]="faCity"></fa-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="pointsOfInterest" [class.activated]="currentUrl == '/pointsOfInterest'">
+          <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+        </a>
+      </li>
+    </ul>
+  </nav>

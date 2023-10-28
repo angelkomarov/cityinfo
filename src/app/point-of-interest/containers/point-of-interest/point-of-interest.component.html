@@ -1,0 +1,29 @@
+<form  (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form">
+        <h4>{{changeMode}}</h4>
+        <hr />
+        <div class="row mb-3">
+            <label for="name" class="col-md-2 col-form-label">Name</label>
+            <div class="col-md-10">
+                <input class="form-control" id="name" name="name" placeholder="Enter Point Of Interest name" [(ngModel)]="pointOfInterest.name" #name="ngModel" required>
+                <div class="help-block" *ngIf="!name.valid && name.touched">Please PO name!</div>                
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <label for="desc" class="col-md-2 col-form-label">Desctiption</label>
+            <div class="col-md-10">
+                <textarea ref-textarea id="desc" class="form-control" rows="3" placeholder="Enter Point Of Interest description" [(ngModel)]="pointOfInterest.description"  name="first" required minlength="3" #desc="ngModel"></textarea>
+                <div *ngIf="!desc.valid && desc.touched">
+                    <span class="help-block" *ngIf="desc.errors['required']">Please enter Desctiption!</span>
+                    <span class="help-block" *ngIf="desc.errors['minlength']">Please enter valid Desctiption (min 3 chars)!</span>
+                </div>    
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+            </div>
+        </div>
+    </div>
+  </form>  <!-- https://getbootstrap.com/docs/5.3/forms/layout/ -->

@@ -1,0 +1,52 @@
+<h2>Points of Interest</h2>
+
+<ul *ngFor="let city of citiesDetails">
+  <div class="container row">
+    <div class="col-md-8">
+      <a routerLink="/details/{{city.id}}">{{ city.name }}</a>
+    </div>
+    <div class="col-md-4">
+      <a  style="float:right" routerLink="/new_po/{{city.id}}"><fa-icon [icon]="faPlus" [spin]="true"></fa-icon></a>
+    </div>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="table-success">
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--event bining for edit point of interest-->
+      <tr *ngFor="let po of city.pointsOfInterest">
+        <td (click)="onClick(city.id, po.id)">{{ po.name }}</td>
+        <td (click)="onClick(city.id, po.id)">{{ po.description }}</td>
+        <button type="button" class="btn btn-link" (click)="onShowModal(deleteModal, city.id, po)"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+      </tr>
+    </tbody>
+  </table>
+</ul>
+
+<!-- --AK1.2 create summary comp that also gets the API data  -->
+<button type="button" class="btn btn-primary" (click)="summary()">show summary</button>
+
+
+<app-points-of-interest-summary *ngIf="showSummary"></app-points-of-interest-summary>
+
+<!--declare modal-->  
+<ng-template #deleteModal let-modal>  
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete PO</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Do you realy want to delete {{delPo.name}} ?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.dismiss('Cancel click')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="modalRef.close('Delete click')">Delete</button>
+  </div>
+</ng-template>
