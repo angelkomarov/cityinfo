@@ -31,8 +31,9 @@
 <!-- --AK1.2 create summary comp that also gets the API data  -->
 <button type="button" class="btn btn-primary" (click)="summary()">show summary</button>
 
-
-<app-points-of-interest-summary *ngIf="showSummary"></app-points-of-interest-summary>
+<div class="points-of-interest-summary-container">
+  <app-points-of-interest-summary *ngIf="showSummary"></app-points-of-interest-summary>
+</div>
 
 <!--declare modal-->  
 <ng-template #deleteModal let-modal>  

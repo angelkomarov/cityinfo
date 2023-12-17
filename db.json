@@ -1,0 +1,120 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "name": "New York City",
+      "description": "The one with that big park.",
+      "link": "nyctourism.com/"
+    },
+    {
+      "id": 2,
+      "name": "Antwerp",
+      "description": "The one with the cathedral that was never really finished.",
+      "link": "visit.antwerpen.be/"
+    },
+    {
+      "id": 3,
+      "name": "Paris",
+      "description": "The one with a big tower.",
+      "link": "parisjetaime.com/"
+    },
+    {
+      "id": 4,
+      "name": "Sydney",
+      "description": "The one with Opera House",
+      "link": "sydney.com"
+    },
+    {
+      "id": 5,
+      "name": "Sofia",
+      "description": "The 15th largest city in the European Union.",
+      "link": "visitsofia.bg"
+    }
+  ],
+  "pointsOfInterest": [
+    {
+      "id": 1,
+      "name": "Central Park",
+      "description": "The most visited urban park in the United States.",
+      "cityId": 1
+    },
+    {
+      "id": 2,
+      "name": "Empire State Building",
+      "description": "A 102-story skyscraper located in Midtown Manhattan.",
+      "cityId": 1
+    },
+    {
+      "id": 3,
+      "name": "Cathedral of Our Lady",
+      "description": "A Gothic style cathedral, conceived by architects Jan and Pieter Appelmans.",
+      "cityId": 2
+    },
+    {
+      "id": 4,
+      "name": "Antwerp Central Station",
+      "description": "The the finest example of railway architecture in Belgium.",
+      "cityId": 2
+    },
+    {
+      "id": 5,
+      "name": "Eiffel Tower",
+      "description": "A wrought iron lattice tower on the Champ de Mars, named after engineer Gustave Eiffel.",
+      "cityId": 3
+    },
+    {
+      "id": 6,
+      "name": "The Louvre",
+      "description": "The world's largest museum.",
+      "cityId": 3
+    },
+    {
+      "cityId": 3,
+      "name": "Palace of Versailles",
+      "description": "The Palace of Versailles was the principal royal residence of France from 1682, under Louis XIV, until the start of the French Revolution in 1789. It is about 20 km (12 miles) southwest of Paris.",
+      "id": 7
+    },
+    {
+      "cityId": 4,
+      "name": "Opera House",
+      "description": "The Sydney Opera House is a multi-venue performing arts centre at Sydney Harbour.",
+      "id": 8
+    },
+    {
+      "cityId": 4,
+      "name": "Harbour Bridge",
+      "description": "It is a heritage-listed steel through arch bridge across Sydney Harbour that carries rail, vehicular, bicycle, and pedestrian traffic between the Sydney central business district and the North Shore",
+      "id": 9
+    },
+    {
+      "cityId": 4,
+      "name": "Darling Harbour",
+      "description": "This waterside pocket of Sydney has got it all; amazing entertainment, fascinating museums, incredible wildlife and delicious dining options right on the water plus a brand-new food precinct.",
+      "id": 10
+    },
+    {
+      "cityId": 5,
+      "name": "National Palace of Culture",
+      "description": "The largest, multifunctional conference and exhibition center in south-eastern Europe.",
+      "id": 11
+    },
+    {
+      "cityId": 5,
+      "name": "Alexander Nevsky Cathedral",
+      "description": "Built in Neo-Byzantine style, it serves as the cathedral church of the Patriarch of Bulgaria and it is believed to be one of the top 50 largest Christian church buildings in the world.",
+      "id": 12
+    },
+    {
+      "cityId": 5,
+      "name": "Parliament House",
+      "description": "Parliament House.",
+      "id": 13
+    },
+    {
+      "cityId": 1,
+      "name": "Statue of Liberty",
+      "description": "The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City.",
+      "id": 14
+    }
+  ]
+}

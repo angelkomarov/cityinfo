@@ -31,7 +31,7 @@ export class PointOfInterestComponent implements OnInit, OnDestroy {
     this.routeEvent$ = this.route$.params.subscribe( params => { 
       this.cityId = Number(params['cityid']); 
       //receive edit point of interest route - params.id = NaN
-      this.poId = Number(params['id']);
+      this.poId = params['id'] ? Number(params['id']) : undefined;
     });
 
     this.pointOfInterest = {} as PointOfInterest;
@@ -44,7 +44,7 @@ export class PointOfInterestComponent implements OnInit, OnDestroy {
       });
     } else { //new record
       this.changeMode = 'New';
-      this.pointOfInterest = {} as PointOfInterest;
+      this.pointOfInterest = { cityId: this.cityId } as PointOfInterest;
     }
 
   }

@@ -12,9 +12,13 @@ export class PointOfInterestApiService {
   constructor(private http: HttpClient) { }
   
   getPointOfInterest(cityId: number, poId: number) : Observable<PointOfInterest> {
-    return this.http.get<PointOfInterest>(`${environment.apiUrl}/${cityId}/pointsofinterest/${poId}`).pipe(
-      map(result => {
-          return result
+    return this.http.get<PointOfInterest>(`${environment.apiUrl}/cities/${cityId}/pointsofinterest?id=${poId}`).pipe(
+      map((result: any) => {
+        if (result?.length == 1) {
+          return result[0];
+        } else {
+          console.error('bad service response - here service should raise an error!');
+        }
       }),
       catchError (err => {
         console.error(err);
@@ -25,11 +29,11 @@ export class PointOfInterestApiService {
 
   createPointOfInterest(cityId: number, po: PointOfInterest) : Observable<any> {
     // let body = JSON.stringify(po);
-    return this.http.post<any>(`${environment.apiUrl}/${cityId}/pointsofinterest/`, po).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/pointsofinterest/`, po).pipe(
       map(result => { 
         return result
       }),
-      catchError ( err => {
+      catchError (err => {
         console.error(err);
         return throwError(() => err);
       })
@@ -38,7 +42,7 @@ export class PointOfInterestApiService {
   
   updatePointOfInterest(cityId: number, po: PointOfInterest) : Observable<any> {
     // let body = JSON.stringify(po);
-    return this.http.put<any>(`${environment.apiUrl}/${cityId}/pointsofinterest/${po.id}`, po).pipe(
+    return this.http.put<any>(`${environment.apiUrl}/pointsofinterest/${po.id}`, po).pipe(
       map(result => { 
         return result
       }),
@@ -50,7 +54,7 @@ export class PointOfInterestApiService {
   }  
 
   deletePointOfInterest(cityId: number,  poId: number) : Observable<any> {
-    return this.http.delete<any>(`${environment.apiUrl}/${cityId}/pointsofinterest/${poId}`).pipe(
+    return this.http.delete<any>(`${environment.apiUrl}/pointsofinterest/${poId}`).pipe(
       map(result => { 
       return result
       }),

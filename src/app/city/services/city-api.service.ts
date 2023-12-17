@@ -27,7 +27,7 @@ export class CityApiService {
 
   //!!AK2 http returns Observable data - manipulate the data stream in between Observer / Observable
   getCities() : Observable<City[]> {
-    return this.http.get<City[]>(environment.apiUrl).pipe(
+    return this.http.get<City[]>(`${environment.apiUrl}/cities`).pipe(
       map(cities => {
         return cities; //return data stream
         //or - manipulate data stream in the middle before return         
@@ -46,7 +46,7 @@ export class CityApiService {
 
   //!!AK1 - return subject:
   getCitiesDetails() {
-    this.http.get<City[]>(`${environment.apiUrl}/pointsofinterest`)
+    this.http.get<City[]>(`${environment.apiUrl}/cities?_embed=pointsOfInterest`)
       //to manipulate the data stream in between Observer / Observable
       // .pipe(
       //   map(
