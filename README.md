@@ -6,10 +6,10 @@ The app communicates with a simulated back-end API powered by **json-server**.
 ---
 
 ## Prerequisites
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- Angular CLI (`npm install -g @angular/cli`)
-- [json-server](https://github.com/typicode/json-server)
-
+- Node.js **14.15.x** or **16.x**
+- Angular CLI `14.2.0` 
+- [json-server](https://github.com/typicode/json-server) <br>
+Note: project could run on newer Angular versions e.g. v17
 ---
 
 ## Setup & Run
