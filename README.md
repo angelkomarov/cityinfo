@@ -51,3 +51,41 @@ The Angular app assumes the API is available at `http://localhost:5000`.
 `ng build` → Build the project for production
 
 `ng test` → Run unit tests
+
+## Project Structure
+```
+src/app/
+│
+├── app-routing.module.ts # Application routes
+├── app.module.ts # Root Angular module
+├── app.component.* # Root application component
+│
+├── app-sidebar/ # Feature: Sidebar
+│ └── containers/
+│ └── sidebar/ # Sidebar container component
+│
+├── app-toasts/ # Feature: Toast notifications
+│ ├── containers/
+│ │ └── info-toast/ # Info toast container component
+│ └── services/ # Toast service logic
+│
+├── city/ # Feature: Cities
+│ ├── containers/
+│ │ └── city-list/ # City list container component
+│ ├── models/ # City data models
+│ └── services/ # API service for cities
+│
+├── point-of-interest/ # Feature: Points of Interest
+│ ├── containers/
+│ │ ├── point-of-interest/ # Single POI view
+│ │ ├── points-of-interest-list/ # List of POIs
+│ │ └── points-of-interest-summary/ # POI summary view
+│ ├── models/ # POI data models
+│ └── services/ # API service for POIs
+│
+└── shared/ # Shared functionality (cross-feature)
+├── containers/
+├── models/
+└── services/
+└── errror-handler.service.* # Centralized error handling
+```
