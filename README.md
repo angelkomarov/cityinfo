@@ -3,6 +3,13 @@
 This is a sample Angular application that displays information about cities.  
 The app communicates with a simulated back-end API powered by **json-server**.
 
+## About
+The project **illustrates multicasted Observables using RxJS Subject**:
+
+- An **RxJS Subject** is a special type of Observable that allows values to be **multicasted** to many Observers.  
+- While plain Observables are **unicast** (each subscribed Observer owns an independent execution of the Observable), **Subjects are multicast**.  
+- In this project, **Subjects are used where necessary to share API call results across multiple subscribers efficiently**.
+
 ---
 
 ## Prerequisites
